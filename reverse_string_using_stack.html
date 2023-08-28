@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse String using stack</title>
+</head>
+<body>
+    <script>
+        var defaultStr = 'jitendra';
+        strArray = defaultStr.split('');
+        var blankArr = [];
+        var items = [];
+        var currentSizeOfBlankArr = blankArr.length
+
+        function push(element) {
+            blankArr[currentSizeOfBlankArr] = element;
+            currentSizeOfBlankArr = currentSizeOfBlankArr + 1
+        }
+
+        function pop() {
+            currentSizeOfBlankArr = currentSizeOfBlankArr - 1;
+            rm = blankArr[currentSizeOfBlankArr]
+            blankArr.length = currentSizeOfBlankArr
+            console.log('inside the pop method', blankArr)
+            console.log('removeElement', rm);
+            return rm;
+        }
+
+        function reverseString(newArray) {
+            for(var i=0; (i < newArray.length); i++) {
+                push(newArray[i]);
+            }
+            console.log("inside of function blankArr for push", blankArr);
+            //console.log("inside of function", newArray);
+
+            for(var j=0; j < (newArray.length); j++) {
+                newArray[j] = pop();
+                
+            }
+            
+            return newArray.join('');
+        }
+
+        res = reverseString(strArray)
+
+        console.log("reverse string output", res);
+    </script>
+</body>
+</html>
