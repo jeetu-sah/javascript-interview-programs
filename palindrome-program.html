@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>palindrome-program</title>
+</head>
+
+<body>
+    <script>
+        number = 151;
+        sum = 0;
+        temp = number;
+
+        while((number) > 0) {
+            remainder = number%10;              //r = REMAINDER
+            console.log('REMAINDER', remainder)
+            
+            sum = Number((sum*10) + remainder);   
+            console.log('sum', sum) 
+
+            number = Math.floor(number/10);    //number => QUOTIENT
+            console.log('QUOTIENT', number) 
+        }
+
+        console.log("palindrome number temp", temp); 
+        console.log("palindrome number sum", sum); 
+        
+        if(temp==sum) {
+            console.log("palindrome number ");    
+        }
+        else {
+            console.log("not palindrome ");  
+        }   
+    </script>
+</body>
+
+</html>
