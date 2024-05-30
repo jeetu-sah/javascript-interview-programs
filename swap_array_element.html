@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reverse String using stack</title>
+  </head>
+  <body>
+    <script>
+      function swapArraysUsingDestructuring(arrayA, arrayB) {
+        // Arrays must have the same length
+        if (arrayA.length !== arrayB.length) {
+          return false;
+        }
+
+        for (let i = 0; i < arrayA.length; i++) {
+          [arrayA[i], arrayB[i]] = [arrayB[i], arrayA[i]];
+        }
+
+        // Swapping arrays successful
+        return true;
+      }
+
+      let arrayA = [1, 2, 3];
+      let arrayB = [5, 6, 7];
+
+      let result = swapArraysUsingDestructuring(arrayA, arrayB);
+      if (result) {
+        console.log(`Array A: ${arrayA}`); //Output -> arrayA = [5, 6, 7]
+        console.log(`Array B: ${arrayB}`); //Output -> arrayB = [1, 2, 3]
+      } else {
+        console.log("The length of an array must be the same");
+      }
+    </script>
+  </body>
+</html>
